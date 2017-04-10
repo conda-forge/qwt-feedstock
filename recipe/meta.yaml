@@ -25,6 +25,7 @@ build:
 
 requirements:
   build:
+    - toolchain
     - qt 4.8.*
     - toolchain  # [unix]
     - python  # [win]
