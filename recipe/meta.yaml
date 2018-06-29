@@ -24,11 +24,11 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - qt >=4.4
+    - {{ pin_compatible('qt', min_pin='4.4') }}
   host:
     - python  # [win]
   run:
-    - qt >=4.4
+    - {{ pin_compatible('qt', min_pin='4.4') }}
 
 test:
   requires:
