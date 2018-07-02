@@ -24,11 +24,11 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - qt  {{ qt }}
+    - qt  {{ qt_version }}
   host:
     - python  # [win]
   run:
-    - qt  {{ qt }}
+    - qt  {{ qt_version }}
 
 test:
   requires:
