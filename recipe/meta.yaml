@@ -17,25 +17,24 @@ source:
     - windows.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win and py36]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - qt 5.6.*
+    - qt  {{ qt_version }}
   host:
     - python  # [win]
   run:
-    - qt 5.6.*
+    - qt  {{ qt_version }}
 
 test:
   requires:
     - python {{ os.environ.get('PY_VER', '') + '*' }}  # [win]
   commands:
-    - test -f ${PREFIX}/lib/libqwt.so  # [linux]
-    - test -f ${PREFIX}/lib/libqwt.dylib  # [osx]
+    - test -f ${PREFIX}/lib/libqwt${SHLIB_EXT}  # [unix]
     - if not exist %PREFIX%\\Library\\include\\qwt.h exit 1  # [win]
     - if not exist %PREFIX%\\Library\\bin\\qwt.dll exit 1  # [win]
     - if not exist %PREFIX%\\Library\\lib\\qwt.lib exit 1  # [win]
