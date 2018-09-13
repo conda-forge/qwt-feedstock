@@ -17,7 +17,7 @@ source:
     - windows.patch
 
 build:
-  number: 2
+  number: 1002
   skip: true  # [win and py36]
 
 requirements:
