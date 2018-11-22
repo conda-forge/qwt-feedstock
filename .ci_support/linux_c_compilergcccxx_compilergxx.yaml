@@ -9,7 +9,12 @@ channel_targets:
 cxx_compiler:
 - gxx
 docker_image:
-- conda/c3i-linux-64
+- condaforge/linux-anvil-comp7
+pin_run_as_build:
+  qt:
+    max_pin: x.x
+qt:
+- '5.6'
 zip_keys:
 - - c_compiler
   - cxx_compiler
