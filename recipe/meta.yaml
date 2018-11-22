@@ -17,13 +17,19 @@ source:
     - windows.patch
 
 build:
-  number: 2
+  number: 1002
   skip: true  # [win and py36]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - {{ cdt('mesa-dri-drivers') }}  # [linux]
+    - {{ cdt('libselinux') }}  # [linux]
+    - {{ cdt('libxdamage') }}  # [linux]
+    - {{ cdt('libxfixes') }}  # [linux]
+    - {{ cdt('libxxf86vm') }}  # [linux]
     - qt 5.6.*
   host:
     - python  # [win]
@@ -34,8 +40,7 @@ test:
   requires:
     - python {{ os.environ.get('PY_VER', '') + '*' }}  # [win]
   commands:
-    - test -f ${PREFIX}/lib/libqwt.so  # [linux]
-    - test -f ${PREFIX}/lib/libqwt.dylib  # [osx]
+    - test -f ${PREFIX}/lib/libqwt${SHLIB_EXT}  # [unix]
     - if not exist %PREFIX%\\Library\\include\\qwt.h exit 1  # [win]
     - if not exist %PREFIX%\\Library\\bin\\qwt.dll exit 1  # [win]
     - if not exist %PREFIX%\\Library\\lib\\qwt.lib exit 1  # [win]

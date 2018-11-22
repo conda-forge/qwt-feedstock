@@ -3,6 +3,7 @@
 [[ -d build ]] || mkdir build
 cd build
 
+export QMAKE_CXX=${GXX}
 QWT_INSTALL_PREFIX=$PREFIX qmake ../qwt.pro
 
 make
