@@ -1,5 +1,5 @@
 {% set name = "qwt" %}
-{% set version = "6.1.4" %}
+{% set version = "5.2.0" %}
 
 package:
   name: qwt
@@ -8,15 +8,13 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.bz2
   url: https://sourceforge.net/projects/qwt/files/qwt/{{ version }}/{{ name }}-{{ version }}.tar.bz2
-  sha256: 1529215329e51fc562e0009505a838f427919a18b362afff441f035b2d9b5bd9
+  sha256: 2b431a6e04cb939f71cdc03a343975162bd6f94bfc11b85227bdb44e9576f5ba
   patches:
     # Can't seem to avoid /usr/local/ install without patch
     - qwtconfig.pri.patch
-    # build in release mode
-    - windows.patch
 
 build:
-  number: 1001
+  number: 0
 
 requirements:
   build:
@@ -55,3 +53,4 @@ extra:
     - ceholden
     - jschueller
     - marcelotrevisani
+    - denivyruck
