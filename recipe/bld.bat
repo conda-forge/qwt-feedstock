@@ -1,4 +1,4 @@
-
+rm qwt.prf
 
 mkdir build && cd build
 
