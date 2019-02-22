@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm qwt.prf
+
 [[ -d build ]] || mkdir build
 cd build
 
