@@ -16,7 +16,7 @@ source:
     - windows.patch
 
 build:
-  number: 1001
+  number: 2001
 
 requirements:
   build:
@@ -29,9 +29,9 @@ requirements:
     - {{ cdt('libxfixes') }}  # [linux]
     - {{ cdt('libxxf86vm') }}  # [linux]
   host:
-    - qt
+    - qt 4.*.*
   run:
-    - qt
+    - qt 4.*.*
 
 test:
   requires:
