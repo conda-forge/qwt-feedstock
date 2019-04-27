@@ -7,7 +7,7 @@ Package license: Qwt, Version 1.0
 
 Feedstock license: BSD 3-Clause
 
-Summary: Qt widgets for technical applications.
+Summary: Qt widgets for technical applications
 
 
 
