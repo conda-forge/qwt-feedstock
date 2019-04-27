@@ -14,6 +14,7 @@ source:
     - windows.patch
 
 build:
+  skip: True  # [win and vc<14]
   number: 1003
 
 requirements:
