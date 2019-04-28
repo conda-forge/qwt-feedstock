@@ -15,10 +15,10 @@ make
 make check
 make install
 
-# # No test suite, but we can build examples in "examples/" as a check
-# echo "Building examples to test library install"
-# mkdir -p examples
-# cd examples/
+# No test suite, but we can build examples in "examples/" as a check
+echo "Building examples to test library install"
+mkdir -p examples
+cd examples/
 
-# qmake ../../examples/examples.pro
-# make
+qmake ../../examples/examples.pro
+make
