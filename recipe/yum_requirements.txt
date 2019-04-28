@@ -1,5 +1,14 @@
 mesa-libGL
-mesa-dri-drivers
-libselinux
-libXdamage
-libXxf86vm
+libXext-devel
+
+# libx11
+# libXext-devel
+# libXrender-devel	
+# libSM-devel	
+# libX11-devel
+# 
+# libXext.so.6
+# libxcb-glx.so.0
+# libxcb-dri2.so.0
+# libxcb.so.1
+# libexpat.so.1
