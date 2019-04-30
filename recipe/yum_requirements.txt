@@ -1,6 +1,6 @@
 mesa-libGL
 libXext-devel
-
+libXtst.i686
 # libx11
 # libXext-devel
 # libXrender-devel	
