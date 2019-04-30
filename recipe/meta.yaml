@@ -29,6 +29,7 @@ requirements:
     - {{ cdt('libxxf86vm') }}  # [linux]
   host:
     - qt
+    - expat
   run:
     - qt
 
