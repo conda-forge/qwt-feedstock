@@ -16,7 +16,8 @@ source:
     - windows.patch
 
 build:
-  number: 1002
+  number: 1003
+  skip: true  # [win and vc<14]
 
 requirements:
   build:
@@ -34,8 +35,6 @@ requirements:
     - qt
 
 test:
-  requires:
-    - python {{ os.environ.get('PY_VER', '') + '*' }}  # [win]
   commands:
     - test -f ${PREFIX}/lib/libqwt${SHLIB_EXT}  # [unix]
     - if not exist %PREFIX%\\Library\\include\\qwt.h exit 1  # [win]

@@ -1,10 +1,8 @@
 #!/bin/bash
 
-[[ -d build ]] || mkdir build
-cd build
+mkdir build && cd build
 
-export QMAKE_CXX=${GXX}
-QWT_INSTALL_PREFIX=$PREFIX qmake ../qwt.pro
+qmake -early QWT_INSTALL_PREFIX=$PREFIX QMAKE_CXXFLAGS="${CXXFLAGS}" QMAKE_CXX=${CXX} QMAKE_LFLAGS="${LDFLAGS}" QMAKE_LINK=${CXX} ../qwt.pro
 
 make
 make check
@@ -15,6 +13,6 @@ echo "Building examples to test library install"
 mkdir -p examples
 cd examples/
 
-qmake ../../examples/examples.pro
+qmake -early QMAKE_CXXFLAGS="${CXXFLAGS}" QMAKE_CXX=${CXX} QMAKE_LFLAGS="${LDFLAGS}" QMAKE_LINK=${CXX} ../../examples/examples.pro
 make
 
