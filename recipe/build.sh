@@ -4,6 +4,7 @@ mkdir build && cd build
 
 qmake -early QWT_INSTALL_PREFIX=$PREFIX QMAKE_CXXFLAGS="${CXXFLAGS}" QMAKE_CXX=${CXX} QMAKE_LFLAGS="${LDFLAGS}" QMAKE_LINK=${CXX} ../qwt.pro
 
+
 make
 make check
 make install
