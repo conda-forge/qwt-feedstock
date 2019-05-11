@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export LDFLAGS="${LDFLAGS} -Wl,-rpath-link,${BUILD_PREFIX}/${HOST}/sysroot"
+
 [[ -d build ]] || mkdir build
 cd build
 
@@ -9,13 +11,13 @@ chmod +x g++
 export PATH=${PWD}:${PATH}
 
 export QMAKE_CXX=${GXX}
-QWT_INSTALL_PREFIX=$PREFIX qmake ../qwt.pro
+qmake ../qwt.pro
 
 make
 make check
 make install
 
-# No test suite, but we can build examples in "examples/" as a check
+# No test suite, but we can build examples in "examples/" as a check.
 echo "Building examples to test library install"
 mkdir -p examples
 cd examples/
