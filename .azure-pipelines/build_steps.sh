@@ -30,7 +30,7 @@ run_conda_forge_build_setup
 # "recipe/yum_requirements.txt" file. After updating that file,
 # run "conda smithy rerender" and this line will be updated
 # automatically.
-/usr/bin/sudo -n yum install -y mesa-libGL libXext-devel
+/usr/bin/sudo -n yum install -y mesa-libGL libXext-devel libXtst.i686
 
 
 # make the build number clobber

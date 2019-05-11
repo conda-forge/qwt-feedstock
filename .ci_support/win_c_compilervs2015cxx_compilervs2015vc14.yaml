@@ -6,7 +6,11 @@ channel_targets:
 - conda-forge main
 cxx_compiler:
 - vs2015
+expat:
+- '2.2'
 pin_run_as_build:
+  expat:
+    max_pin: x.x
   qt:
     max_pin: x.x
   vc:
