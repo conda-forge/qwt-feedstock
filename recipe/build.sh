@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $target_platform == linux* ]]; then
-  export QMAKE_LFLAGS="-Wl,-rpath-link,$PREFIX/lib -Wl,-rpath-link,${BUILD_PREFIX}/${HOST}/sysroot/usr/lib64/"
+  ln -s -t "${BUILD_PREFIX}/${HOST}/sysroot/usr/lib64/" $PREFIX/lib/libexpat*
 fi
 
 [[ -d build ]] || mkdir build
