@@ -1,6 +1,11 @@
 #!/bin/bash
 
-export LDFLAGS="${LDFLAGS} -Wl,-rpath-link,${BUILD_PREFIX}/${HOST}/sysroot"
+if [[ $target_platform == linux* ]]; then
+  export LDFLAGS="${LDFLAGS} -Wl,-rpath-link,${BUILD_PREFIX}/${HOST}/sysroot"
+  # Hack until libxcb and libexpat CDTs are there
+  cp $PREFIX/lib/libxcb* "${BUILD_PREFIX}/${HOST}/sysroot/usr/lib64/"
+  cp $PREFIX/lib/libexpat* "${BUILD_PREFIX}/${HOST}/sysroot/usr/lib64/"
+fi
 
 [[ -d build ]] || mkdir build
 cd build
