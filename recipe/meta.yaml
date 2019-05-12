@@ -28,6 +28,8 @@ requirements:
     - {{ cdt('libxfixes') }}  # [linux]
     - {{ cdt('libxxf86vm') }}  # [linux]
     - {{ cdt('libxext-devel') }}  # [linux]
+    - {{ cdt('libxcb') }}  # [linux]
+    - {{ cdt('libXau') }}  # [linux]
     # - {{ cdt('alsa-lib-devel') }}        # [linux]
     # - {{ cdt('cups-devel') }}            # [linux]
     # - {{ cdt('gtk2-devel') }}            # [linux]
