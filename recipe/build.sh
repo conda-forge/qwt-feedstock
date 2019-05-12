@@ -12,7 +12,6 @@ ln -s ${GXX} g++ || true
 chmod +x g++
 export PATH=${PWD}:${PATH}
 
-export QMAKE_CXX=${GXX}
 qmake ../qwt.pro
 
 make
