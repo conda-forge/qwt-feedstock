@@ -1,9 +1,7 @@
 #!/bin/bash
 
 if [[ $target_platform == linux* ]]; then
-  export LDFLAGS="${LDFLAGS} -Wl,-rpath-link,$PREFIX/lib"
-  # Hack until libxcb and libexpat CDTs are there
-  ln -s -t "${BUILD_PREFIX}/${HOST}/sysroot/usr/lib64/" $PREFIX/lib/libxcb* $PREFIX/lib/libexpat*
+  export QMAKE_LFLAGS="-Wl,-rpath-link,$PREFIX/lib -Wl,-rpath-link,${BUILD_PREFIX}/${HOST}/sysroot/usr/lib64/"
 fi
 
 [[ -d build ]] || mkdir build
