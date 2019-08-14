@@ -1,9 +1,5 @@
 #!/bin/bash
 
-if [[ $target_platform == linux* ]]; then
-  ln -s -t "${BUILD_PREFIX}/${HOST}/sysroot/usr/lib64/" $PREFIX/lib/libexpat*
-fi
-
 [[ -d build ]] || mkdir build
 cd build
 

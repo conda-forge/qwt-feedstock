@@ -16,6 +16,7 @@ source:
 build:
   skip: True  # [win and vc<14]
   number: 1004
+  merge_build_host: true  # [linux]
 
 requirements:
   build:
