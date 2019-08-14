@@ -1,9 +1,5 @@
 #!/bin/bash
 
-if [[ $target_platform == linux* ]]; then
-  ln -s -t "${BUILD_PREFIX}/${HOST}/sysroot/usr/lib64/" $PREFIX/lib/libexpat*
-fi
-
 [[ -d build ]] || mkdir build
 cd build
 
@@ -14,7 +10,7 @@ export PATH=${PWD}:${PATH}
 
 qmake ../qwt.pro
 
-make
+make -j${CPU_COUNT}
 make check
 make install
 
@@ -24,4 +20,4 @@ mkdir -p examples
 cd examples/
 
 qmake ../../examples/examples.pro
-make
+make -j${CPU_COUNT}
