@@ -14,9 +14,11 @@ source:
     - windows.patch
 
 build:
-  skip: True  # [win and vc<14]
-  number: 1004
+  skip: true  # [win and vc<14]
+  number: 1005
   merge_build_host: true  # [linux]
+  run_exports:
+    - {{ pin_subpackage('qwt', max_pin='x.x') }}
 
 requirements:
   build:
