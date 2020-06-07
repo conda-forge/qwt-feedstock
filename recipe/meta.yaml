@@ -1,4 +1,4 @@
-{% set version = "6.1.4" %}
+{% set version = "6.1.5" %}
 
 package:
   name: qwt
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://sourceforge.net/projects/qwt/files/qwt/{{ version }}/qwt-{{ version }}.tar.bz2
-  sha256: 1529215329e51fc562e0009505a838f427919a18b362afff441f035b2d9b5bd9
+  sha256: 4076de63ec2b5e84379ddfebf27c7b29b8dc9074f3db7e2ca61d11a1d8adc041
   patches:
     # Can't seem to avoid /usr/local/ install without patch
     - qwtconfig.pri.patch
@@ -15,7 +15,7 @@ source:
 
 build:
   skip: true  # [win and vc<14]
-  number: 1005
+  number: 0
   merge_build_host: true  # [linux]
   run_exports:
     - {{ pin_subpackage('qwt', max_pin='x.x') }}
@@ -67,7 +67,7 @@ test:
     - if not exist %PREFIX%\\Library\\lib\\qwt.lib exit 1  # [win]
 
 about:
-  home: http://qwt.sourceforge.net/ 
+  home: http://qwt.sourceforge.net/
   license: Qwt, Version 1.0
   license_file: COPYING
   summary: Qt widgets for technical applications
