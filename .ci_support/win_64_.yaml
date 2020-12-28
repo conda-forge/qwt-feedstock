@@ -11,5 +11,7 @@ pin_run_as_build:
     max_pin: x.x
 qt:
 - '5.12'
+target_platform:
+- win-64
 vc:
 - '14'
