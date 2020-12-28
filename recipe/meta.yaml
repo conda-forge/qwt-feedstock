@@ -1,4 +1,4 @@
-{% set version = "6.1.5" %}
+{% set version = "6.1.6" %}
 
 package:
   name: qwt
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://sourceforge.net/projects/qwt/files/qwt/{{ version }}/qwt-{{ version }}.tar.bz2
-  sha256: 4076de63ec2b5e84379ddfebf27c7b29b8dc9074f3db7e2ca61d11a1d8adc041
+  sha256: 99460d31c115ee4117b0175d885f47c2c590d784206f09815dc058fbe5ede1f6
   patches:
     # Can't seem to avoid /usr/local/ install without patch
     - qwtconfig.pri.patch
