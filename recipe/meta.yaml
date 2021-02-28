@@ -53,7 +53,8 @@ requirements:
     - {{ cdt('alsa-lib') }}              # [linux]
     - {{ cdt('xorg-x11-server-xvfb') }}  # [linux]
     - {{ cdt('pciutils-devel') }}        # [linux]
-
+    - {{ cdt('libxcb') }}                # [linux]
+    - {{ cdt('pcre') }}                  # [linux and cdt_name != 'cos6']
   host:
     - qt
   run:
