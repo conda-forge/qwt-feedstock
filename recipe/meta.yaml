@@ -15,10 +15,17 @@ source:
 
 build:
   skip: true  # [win and vc<14]
-  number: 0
+  number: 1
   merge_build_host: true  # [linux]
   run_exports:
     - {{ pin_subpackage('qwt', max_pin='x.x') }}
+
+# Make sure that the default installed version is the one with 5.12
+  {% if QT_VERSION == "5.15" %}
+  track_features:
+    - qwt_with_qt_5_15
+  {% endif %}
+
 
 requirements:
   build:
@@ -58,9 +65,17 @@ requirements:
     - {{ cdt('pcre') }}                  # [linux and cdt_name != 'cos6']
     - make                               # [unix]
   host:
+  {% if QT_VERSION == "5.12" %}
     - qt
+  {% else %}
+    - qt-main
+  {% endif %}
   run:
+  {% if QT_VERSION == "5.12" %}
     - qt
+  {% else %}
+    - qt-main
+  {% endif %}
 
 test:
   commands:
