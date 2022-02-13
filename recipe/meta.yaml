@@ -68,7 +68,7 @@ requirements:
     - make                               # [unix]
   host:
   {% if QT_VERSION == "5.12" %}
-    - qt
+    - qt 5.12.9 *_4
   {% else %}
     - qt-main
   {% endif %}
