@@ -79,6 +79,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - traversaro
     - ceholden
     - jschueller
     - marcelotrevisani
