@@ -10,5 +10,5 @@ cdt_name:  # [linux64]
 # This is done to build for both qt (5.12) and qt-main (5.15)
 # until conda-forge as an whole migrate to 5.15 
 QT_VERSION:
-  - "5.12"
+  - "5.12"  # [arm64]
   - "5.15"
