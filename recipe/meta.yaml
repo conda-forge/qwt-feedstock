@@ -23,7 +23,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - sysroot_linux-64 2.17  # [linux64 and cdt_name == 'cos7']
+    - sysroot_linux-64 2.17  # [linux64]
     - {{ compiler('cxx') }}
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('libx11-devel') }}          # [linux]
