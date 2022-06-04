@@ -38,45 +38,24 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_QT_VERSION5.12cdt_namecos6</td>
+              <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3312&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qwt-feedstock?branchName=main&jobName=linux&configuration=linux_64_QT_VERSION5.12cdt_namecos6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qwt-feedstock?branchName=main&jobName=linux&configuration=linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_QT_VERSION5.15cdt_namecos7</td>
+              <td>linux_aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3312&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qwt-feedstock?branchName=main&jobName=linux&configuration=linux_64_QT_VERSION5.15cdt_namecos7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qwt-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_QT_VERSION5.12</td>
+              <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3312&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qwt-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_QT_VERSION5.12" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_QT_VERSION5.15</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3312&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qwt-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_QT_VERSION5.15" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_QT_VERSION5.12</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3312&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qwt-feedstock?branchName=main&jobName=osx&configuration=osx_64_QT_VERSION5.12" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_QT_VERSION5.15</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3312&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qwt-feedstock?branchName=main&jobName=osx&configuration=osx_64_QT_VERSION5.15" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qwt-feedstock?branchName=main&jobName=osx&configuration=osx_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -87,17 +66,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_QT_VERSION5.12</td>
+              <td>win_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3312&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qwt-feedstock?branchName=main&jobName=win&configuration=win_64_QT_VERSION5.12" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_QT_VERSION5.15</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3312&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qwt-feedstock?branchName=main&jobName=win&configuration=win_64_QT_VERSION5.15" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qwt-feedstock?branchName=main&jobName=win&configuration=win_64_" alt="variant">
                 </a>
               </td>
             </tr>
