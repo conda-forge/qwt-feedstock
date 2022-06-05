@@ -14,7 +14,7 @@ source:
     - windows.patch
 
 build:
-  number: 3
+  number: 4
   merge_build_host: true  # [linux]
   run_exports:
     - {{ pin_subpackage('qwt', max_pin='x.x') }}
