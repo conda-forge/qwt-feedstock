@@ -14,17 +14,15 @@ source:
     - windows.patch
 
 build:
-  number: 5
-  merge_build_host: true  # [linux]
+  number: 6
   run_exports:
     - {{ pin_subpackage('qwt', max_pin='x.x') }}
-
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - sysroot_linux-64 2.17  # [linux64]
     - {{ compiler('cxx') }}
+    - sysroot_linux-64 2.17  # [linux64]
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('libx11-devel') }}          # [linux]
     - {{ cdt('libxext-devel') }}         # [linux]

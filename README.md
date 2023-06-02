@@ -1,11 +1,11 @@
-About qwt
-=========
+About qwt-feedstock
+===================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qwt-feedstock/blob/main/LICENSE.txt)
 
 Home: http://qwt.sourceforge.net/
 
 Package license: Qwt, Version 1.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qwt-feedstock/blob/main/LICENSE.txt)
 
 Summary: Qt widgets for technical applications
 
