@@ -2,7 +2,7 @@
 
 mkdir build && cd build
 
-qmake ..\qwt.pro
+qmake6 ..\qwt.pro
 if errorlevel 1 exit 1
 
 nmake
