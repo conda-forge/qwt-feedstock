@@ -56,11 +56,15 @@ requirements:
     - {{ cdt('libxcb') }}                # [linux]
     - {{ cdt('expat-devel') }}           # [linux]
     - {{ cdt('pcre') }}                  # [linux and cdt_name != 'cos6']
+    - {{ cdt('libglvnd-glx') }}          # [linux]
+    - {{ cdt('libglvnd-egl') }}          # [linux]
+    - {{ cdt('libglvnd-devel') }}        # [linux]
     - make                               # [unix]
+    - qt6-main                           # [build_platform != target_platform]
   host:
-    - qt-main
+    - qt6-main
   run:
-    - qt-main
+    - qt6-main
 
 test:
   commands:
