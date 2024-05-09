@@ -1,4 +1,4 @@
-{% set version = "6.2.0" %}
+{% set version = "6.3.0" %}
 
 package:
   name: qwt
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://sourceforge.net/projects/qwt/files/qwt/{{ version }}/qwt-{{ version }}.tar.bz2
-  sha256: 9194f6513955d0fd7300f67158175064460197abab1a92fa127a67a4b0b71530
+  sha256: dcb085896c28aaec5518cbc08c0ee2b4e60ada7ac929d82639f6189851a6129a
   patches:
     # Can't seem to avoid /usr/local/ install without patch
     - qwtconfig.pri.patch
@@ -14,15 +14,15 @@ source:
     - windows.patch
 
 build:
-  number: 6
+  number: 0
   run_exports:
     - {{ pin_subpackage('qwt', max_pin='x.x') }}
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
-    - sysroot_linux-64 2.17  # [linux]
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('libx11-devel') }}          # [linux]
     - {{ cdt('libxext-devel') }}         # [linux]
