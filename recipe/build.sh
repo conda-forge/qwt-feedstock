@@ -5,7 +5,7 @@ cd build
 
 # Missing g++ workaround.
 ln -s ${GXX} g++ || true
-chmod +x g++
+# chmod +x g++
 export PATH=${PWD}:${PATH}
 
 qmake6 ../qwt.pro
