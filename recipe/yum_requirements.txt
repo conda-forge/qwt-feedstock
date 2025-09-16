@@ -1,4 +1,4 @@
-mesa-libGL-devel
+mesa-libGL
 mesa-libGLU-devel
 mesa-libEGL-devel
 libgl1-mesa-glx

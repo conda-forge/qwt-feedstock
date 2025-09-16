@@ -29,7 +29,6 @@ requirements:
     - {{ cdt('libxext-devel') }}         # [linux]
     - {{ cdt('libxrender-devel') }}      # [linux]
     - {{ cdt('mesa-libgl') }}            # [linux]
-    - {{ cdt('mesa-libgl-devel') }}      # [linux]
     - {{ cdt('mesa-libegl-devel') }}     # [linux]
     - {{ cdt('mesa-dri-drivers') }}      # [linux]
     - {{ cdt('libxau-devel') }}          # [linux]
