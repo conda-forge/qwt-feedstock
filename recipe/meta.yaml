@@ -58,9 +58,9 @@ requirements:
     - {{ cdt('pcre') }}                  # [linux and cdt_name != 'cos6']
     - make                               # [unix]
   host:
-    - qt-main
+    - qt6-main
   run:
-    - qt-main
+    - qt6-main
 
 test:
   commands:
