@@ -57,6 +57,7 @@ requirements:
     - {{ cdt('expat-devel') }}           # [linux]
     - {{ cdt('pcre') }}                  # [linux and cdt_name != 'cos6']
     - make                               # [unix]
+    - qt6-main                           # [osx and arm64]
   host:
     - qt6-main
   run:
