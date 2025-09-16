@@ -28,7 +28,7 @@ requirements:
     - {{ cdt('libx11-devel') }}          # [linux]
     - {{ cdt('libxext-devel') }}         # [linux]
     - {{ cdt('libxrender-devel') }}      # [linux]
-    - {{ cdt('mesa-libgl') }}            # [linux]
+    - {{ cdt('mesa-libgl-devel') }}      # [linux]
     - {{ cdt('mesa-libegl-devel') }}     # [linux]
     - {{ cdt('mesa-dri-drivers') }}      # [linux]
     - {{ cdt('libxau-devel') }}          # [linux]
@@ -57,7 +57,7 @@ requirements:
     - {{ cdt('expat-devel') }}           # [linux]
     - {{ cdt('pcre') }}                  # [linux and cdt_name != 'cos6']
     - make                               # [unix]
-    - qt6-main                           # [osx and arm64]
+    - qt6-main                           # [unix]
   host:
     - qt6-main
   run:
