@@ -1,7 +1,6 @@
 mesa-libGL
 mesa-libGLU-devel
 mesa-libEGL-devel
-libgl1-mesa-glx
 libX11-devel
 libXt-devel
 libXtst-devel
