@@ -57,7 +57,8 @@ requirements:
     - {{ cdt('expat-devel') }}           # [linux]
     - {{ cdt('pcre') }}                  # [linux and cdt_name != 'cos6']
     - make                               # [unix]
-    - qt6-main                           # [unix]
+    - libgl-devel                        # [unix]
+    - qt6-main
   host:
     - qt6-main
   run:
