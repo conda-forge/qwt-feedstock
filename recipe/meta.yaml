@@ -58,7 +58,7 @@ requirements:
     - {{ cdt('pcre') }}                  # [linux and cdt_name != 'cos6']
     - make                               # [unix]
     - libgl-devel                        # [unix]
-    - qt6-main
+    - qt6-main                           # [unix]
   host:
     - qt6-main
   run:
