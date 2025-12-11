@@ -23,11 +23,11 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - make                               # [unix]
     - libgl-devel                        # [linux]
   host:
-    - libgl-devel                        # [linux]
     - qt6-main
   run:
     - qt6-main
