@@ -1,0 +1,22 @@
+From f28c75f0f53be62425bbe3a7dc403fb8e283b3d5 Mon Sep 17 00:00:00 2001
+From: acpaquette <acpaquette@usgs.gov>
+Date: Wed, 10 Dec 2025 23:16:53 +0000
+Subject: [PATCH] Added include path for conda env
+
+---
+ qwtbuild.pri | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/qwtbuild.pri b/qwtbuild.pri
+index c83f693..8fc4631 100644
+--- a/qwtbuild.pri
++++ b/qwtbuild.pri
+@@ -214,3 +214,5 @@ if ( !isEmpty( LOCAL_PRI ) ) {
+         include( $${LOCAL_PRI} )
+     }
+ }
++
++INCLUDEPATH += $$[QT_INSTALL_PREFIX]/include
+-- 
+2.34.1
+
