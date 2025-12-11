@@ -4,8 +4,9 @@
 cd build
 
 # Missing g++ workaround.
-ln -s ${GXX} g++ || true
-# chmod +x g++
+compiler=$(which ${GXX})
+ln -s ${compiler} g++ || true
+chmod +x g++
 export PATH=${PWD}:${PATH}
 
 qmake6 ../qwt.pro
