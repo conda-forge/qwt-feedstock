@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sed -i.bak "/silent/d" qwtbuild.pri
+
 [[ -d build ]] || mkdir build
 cd build
 
