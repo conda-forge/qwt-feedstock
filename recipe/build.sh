@@ -6,10 +6,8 @@ sed -i.bak "/silent/d" qwtbuild.pri
 cd build
 
 # Missing g++ workaround.
-compiler=$(which ${CXX})
-ln -s ${compiler} g++ || true
-chmod +x g++
-export PATH=${PWD}:${PATH}
+ln -sv ${CXX} ${BUILD_PREFIX}/bin/g++
+which g++
 
 qmake6 ../qwt.pro
 
