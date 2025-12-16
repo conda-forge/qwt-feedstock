@@ -9,6 +9,7 @@ cd build
 ln -sv ${CXX} ${BUILD_PREFIX}/bin/g++
 which g++
 
+qmake6 -query
 qmake6 ../qwt.pro
 
 make -j${CPU_COUNT}
