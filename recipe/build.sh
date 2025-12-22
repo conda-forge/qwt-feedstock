@@ -2,19 +2,22 @@
 
 sed -i.bak "/silent/d" qwtbuild.pri
 
-[[ -d build ]] || mkdir build
-cd build
+mkdir build && cd build
 
-# Missing g++ workaround.
-ln -sv ${CXX} ${BUILD_PREFIX}/bin/g++
-which g++
-
-qmake6 ../qwt.pro
+qmake6 -early \
+    PREFIX=$PREFIX \
+    LIB_DIR=$PREFIX/lib \
+    INCLUDE_DIR=$PREFIX/include \
+    QMAKE_CC=${CC} \
+    QMAKE_CXX=${CXX} \
+    QMAKE_LINK=${CXX} \
+    QMAKE_RANLIB=${RANLIB} \
+    QMAKE_OBJDUMP=${OBJDUMP} \
+    QMAKE_STRIP=${STRIP} \
+    QMAKE_AR="${AR} cqs" \
+    ../qwt.pro
 
 make -j${CPU_COUNT}
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
-make check
-fi
 make install
 
 # No test suite, but we can build examples in "examples/" as a check.

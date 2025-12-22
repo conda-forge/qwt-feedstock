@@ -14,7 +14,7 @@ source:
     - windows.patch
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage('qwt', max_pin='x.x') }}
 
@@ -24,7 +24,7 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - make                               # [unix]
-    - qt6-main                           # [build_platform != target_platform]
+    - qt6-main                           # [osx and build_platform != target_platform]
     - {{ cdt('mesa-libgl-devel') }}      # [linux]
     - {{ cdt('mesa-libegl-devel') }}     # [linux]
     - {{ cdt('mesa-dri-drivers') }}      # [linux]
