@@ -28,6 +28,8 @@ then
         grep -nr "include/qt6/QtPrintSupport" .  || echo "nope"
     fi
 fi
+cat Makefile
+cat src/Makefile
 
 make -j${CPU_COUNT}
 make install
