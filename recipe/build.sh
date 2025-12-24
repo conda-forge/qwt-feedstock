@@ -5,9 +5,6 @@ sed -i.bak "/silent/d" qwtbuild.pri
 mkdir build && cd build
 
 qmake6 -early \
-    PREFIX=$PREFIX \
-    LIB_DIR=$PREFIX/lib \
-    INCLUDE_DIR=$PREFIX/include \
     QMAKE_CC=${CC} \
     QMAKE_CXX=${CXX} \
     QMAKE_LINK=${CXX} \
@@ -16,6 +13,21 @@ qmake6 -early \
     QMAKE_STRIP=${STRIP} \
     QMAKE_AR="${AR} cqs" \
     ../qwt.pro
+
+if test `uname` = "Darwin"
+then
+    if test "$CONDA_BUILD_CROSS_COMPILATION" = "1"
+    then
+        echo "grep..."
+        which grep
+        echo "lib..."
+        grep -nr OpenGLWidgets . || echo "nope"
+        echo "arch..."
+        grep -nr "arch x86_64" . || echo "nope"
+        echo "include..."
+        grep -nr "include/qt6/QtPrintSupport" .  || echo "nope"
+    fi
+fi
 
 make -j${CPU_COUNT}
 make install
