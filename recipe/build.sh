@@ -14,6 +14,7 @@ qmake6 -early \
     QMAKE_AR="${AR} cqs" \
     ../qwt.pro
 
+make -j${CPU_COUNT}
 if test `uname` = "Darwin"
 then
     if test "$CONDA_BUILD_CROSS_COMPILATION" = "1"
@@ -31,7 +32,6 @@ fi
 cat Makefile
 cat src/Makefile
 
-make -j${CPU_COUNT}
 make install
 
 # No test suite, but we can build examples in "examples/" as a check.
