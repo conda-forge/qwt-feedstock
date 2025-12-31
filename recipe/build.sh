@@ -1,6 +1,17 @@
 #!/bin/bash
 
+set -ex
+
 sed -i.bak "/silent/d" qwtbuild.pri
+
+if test "${CONDA_BUILD_CROSS_COMPILATION}" == "1"; then
+  CMAKE_ARGS="${CMAKE_ARGS} -DQT_HOST_PATH=${BUILD_PREFIX}"
+  if test `uname` = "Darwin"; then
+    cmake -LAH ${CMAKE_ARGS} -B build .
+    cmake --build build --target install --parallel ${CPU_COUNT}
+    exit 0
+  fi
+fi
 
 mkdir build && cd build
 
