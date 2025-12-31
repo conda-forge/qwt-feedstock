@@ -12,9 +12,11 @@ source:
     - qwtconfig.pri.patch
     # build in release mode
     - windows.patch
+    # for osx/arm64
+    - cmake.patch
 
 build:
-  number: 3
+  number: 4
   run_exports:
     - {{ pin_subpackage('qwt', max_pin='x.x') }}
 
@@ -24,6 +26,7 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - make                               # [unix]
+    - cmake                              # [osx and build_platform != target_platform]
     - qt6-main                           # [osx and build_platform != target_platform]
     - {{ cdt('mesa-libgl-devel') }}      # [linux]
     - {{ cdt('mesa-libegl-devel') }}     # [linux]
@@ -40,6 +43,7 @@ requirements:
 test:
   commands:
     - test -f ${PREFIX}/lib/libqwt${SHLIB_EXT}  # [unix]
+    - test -f ${PREFIX}/include/qwt.h  # [unix]
     - if not exist %PREFIX%\\Library\\include\\qwt.h exit 1  # [win]
     - if not exist %PREFIX%\\Library\\bin\\qwt.dll exit 1  # [win]
     - if not exist %PREFIX%\\Library\\lib\\qwt.lib exit 1  # [win]
