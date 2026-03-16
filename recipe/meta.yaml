@@ -16,7 +16,7 @@ source:
     - cmake.patch
 
 build:
-  number: 4
+  number: 5
   run_exports:
     - {{ pin_subpackage('qwt', max_pin='x.x') }}
 
@@ -28,15 +28,14 @@ requirements:
     - make                               # [unix]
     - cmake                              # [osx and build_platform != target_platform]
     - qt6-main                           # [osx and build_platform != target_platform]
-    - {{ cdt('mesa-libgl-devel') }}      # [linux]
-    - {{ cdt('mesa-libegl-devel') }}     # [linux]
-    - {{ cdt('mesa-dri-drivers') }}      # [linux]
-    - {{ cdt('libdrm-devel') }}          # [linux]
   host:
     - qt6-main
     - libgl-devel                        # [linux]
     - libglx-devel                       # [linux]
     - libegl-devel                       # [linux]
+    - libgl-devel                        # [linux]
+    - libegl-devel                       # [linux]
+    - libdrm                             # [linux]
   run:
     - qt6-main
 
