@@ -21,6 +21,8 @@ qmake6 -early \
     INCLUDE_DIR=$PREFIX/include \
     QMAKE_CC=${CC} \
     QMAKE_CXX=${CXX} \
+    QMAKE_CXXFLAGS="${CXXFLAGS}" \
+    QMAKE_LFLAGS="${LDFLAGS}" \
     QMAKE_LINK=${CXX} \
     QMAKE_RANLIB=${RANLIB} \
     QMAKE_OBJDUMP=${OBJDUMP} \

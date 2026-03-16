@@ -1,0 +1,74 @@
+context:
+  version: "6.3.0"
+
+package:
+  name: qwt
+  version: ${{ version }}
+
+source:
+  url: https://sourceforge.net/projects/qwt/files/qwt/${{ version }}/qwt-${{ version }}.tar.bz2
+  sha256: dcb085896c28aaec5518cbc08c0ee2b4e60ada7ac929d82639f6189851a6129a
+  patches:
+    # Can't seem to avoid /usr/local/ install without patch
+    - qwtconfig.pri.patch
+    # build in release mode
+    - windows.patch
+    # for osx/arm64
+    - cmake.patch
+
+build:
+  number: 5
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - if: unix
+      then: make
+    - if: linux
+      then:
+        - libgl-devel
+        - libglx-devel
+        - libegl-devel
+    - if: osx and build_platform != target_platform
+      then:
+        - qt6-main
+        - cmake
+  host:
+    - qt6-main
+    - if: linux
+      then:
+        - libgl-devel
+        - libglx-devel
+        - libegl-devel
+  run:
+    - qt6-main
+  run_exports:
+    - ${{ pin_subpackage('qwt', upper_bound='x.x') }}
+
+tests:
+  - script:
+      - if: unix
+        then:
+          - test -f ${PREFIX}/lib/libqwt${SHLIB_EXT}
+          - test -f ${PREFIX}/include/qwt.h
+        else:
+          - if not exist %PREFIX%\\Library\\include\\qwt.h exit 1
+          - if not exist %PREFIX%\\Library\\bin\\qwt.dll exit 1
+          - if not exist %PREFIX%\\Library\\lib\\qwt.lib exit 1
+
+about:
+  homepage: http://qwt.sourceforge.net/
+  license: LicenseRef-Qwt
+  license_file: COPYING
+  summary: Qt widgets for technical applications
+  documentation: http://qwt.sourceforge.net/
+  repository: https://sourceforge.net/projects/qwt/
+
+extra:
+  recipe-maintainers:
+    - traversaro
+    - ceholden
+    - jschueller
+    - marcelotrevisani
