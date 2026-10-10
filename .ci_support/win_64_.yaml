@@ -9,6 +9,6 @@ channel_targets:
 cxx_compiler:
 - vs2022
 qt6_main:
-- '6.11'
+- '6'
 target_platform:
 - win-64

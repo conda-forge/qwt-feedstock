@@ -15,9 +15,11 @@ source:
     - windows.patch
     # for osx/arm64
     - cmake.patch
+    # to get rid of hard-coded Qt5 libraries
+    - pkgconfig.patch
 
 build:
-  number: 6
+  number: 7
 
 requirements:
   build:
